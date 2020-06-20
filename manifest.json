@@ -1,0 +1,25 @@
+{
+
+  "manifest_version": 2,
+  "name": "Account Factory",
+  "version": "1.0",
+  "description": "Account Creation Extension for Google Chrome",
+  "icons":{
+    "48": "icons/squirrel-eating-egg-roll.png"
+  },
+  "page_action": {
+  "default_popup" : "view/index.html"
+},
+"permissions": [
+  "storage"
+],
+  "content_scripts": [
+  {
+    "matches": ["https://*.secure.runescape.com/m=account-creation/create_account*"],
+    "css": ["css/style.css", "assets/bootstrap/css/bootstrap.min.css"],
+    "js": ["assets/anticaptcha.js","js/content_script.js", "assets/jquery-3.5.1.min.js", "assets/FileSaver.js", "assets/bootstrap/js/bootstrap.min.js"]
+  }
+]
+
+
+}
